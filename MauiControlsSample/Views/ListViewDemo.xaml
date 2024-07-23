@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.ListViewDemo"
+             Title="ListViewDemo">
+    <Grid>
+        <ListView
+            ItemsSource="{Binding Items}"
+            SelectionMode="Single"
+            SeparatorVisibility="None"
+            SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Border 
+                            Stroke="Gray"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 10"
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0, 5, 0, 0">
+                            <StackLayout>
+                                <Label 
+                                    Text="{Binding Name}" 
+                                    FontSize="15" />
+                                <Label 
+                                    Text="{Binding Description}" 
+                                    FontSize="12" />
+                            </StackLayout>
+                        </Border>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

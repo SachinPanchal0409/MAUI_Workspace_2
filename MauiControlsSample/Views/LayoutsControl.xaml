@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.LayoutsControl"
+             Title="LayoutsControl">
+    
+    <Grid
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+        Margin="20"
+        RowSpacing="20"
+        HorizontalOptions="Center">
+        <Label
+            Text="StackLayout"
+            FontSize="25"
+            TextColor="#17c5e8">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding StackLayoutCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+            Grid.Row="1"
+            Text="Grid"
+            FontSize="25"
+            TextColor="#17c5e8">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GridCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+            Grid.Row="2"
+            Text="FlexLayout"
+            FontSize="25"
+            TextColor="#17c5e8">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding FlexLayoutCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+            Grid.Row="3"
+            Text="AbsoluteLayout"
+            FontSize="25"
+            TextColor="#17c5e8">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding AbsoluteLayoutCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+            Grid.Row="4"
+            Text="BindableLayout"
+            FontSize="25"
+            TextColor="#17c5e8">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding BindableLayoutCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Label
+            Grid.Row="5"
+            Text="CustomLayout"
+            FontSize="25"
+            TextColor="#17c5e8">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CustomLayoutCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+    
+</ContentPage>

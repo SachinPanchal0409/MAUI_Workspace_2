@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.StackLayoutDemo"
+             Title="StackLayoutDemo">
+
+    <Grid
+        RowDefinitions="Auto, Auto, Auto, *, Auto, Auto">
+        <Label
+            Text="Vertical Stack Layout"
+            HorizontalTextAlignment="Center"/>
+        <VerticalStackLayout
+            Grid.Row="1"
+            Padding="20"
+            Spacing="10">
+            <BoxView 
+                HeightRequest="50"
+                WidthRequest="50" 
+                Color="Aqua"
+                HorizontalOptions="Start"/>
+            <BoxView 
+                HeightRequest="50" 
+                WidthRequest="50" 
+                Color="Red"/>
+            <BoxView 
+                HeightRequest="50" 
+                WidthRequest="50" 
+                Color="Yellow"
+                HorizontalOptions="End"/>
+            <BoxView 
+                HeightRequest="50" 
+                WidthRequest="50" 
+                Color="ForestGreen"/>
+
+        </VerticalStackLayout>
+        <Label
+            Grid.Row="2"
+            Text="Horizontal Stack Layout"
+            HorizontalTextAlignment="Center"/>
+        <HorizontalStackLayout
+            Grid.Row="3"
+            Padding="20"
+            Spacing="10"
+            HorizontalOptions="Center">
+            <BoxView 
+                HeightRequest="50"
+                WidthRequest="50" 
+                Color="Aqua"
+                VerticalOptions="Start"/>
+            <BoxView 
+                HeightRequest="50" 
+                WidthRequest="50" 
+                Color="Red"/>
+            <BoxView 
+                HeightRequest="50" 
+                WidthRequest="50" 
+                Color="Yellow"
+                VerticalOptions="End"/>
+            <BoxView 
+                HeightRequest="50" 
+                WidthRequest="50" 
+                Color="ForestGreen"/>
+        </HorizontalStackLayout>
+        <Label
+            Grid.Row="4"
+            HorizontalOptions="CenterAndExpand"
+            FontAttributes="Bold"
+            Text="HorizontalStackLayout and VerticalStackLayout are more performant than StackLayout"/>
+        <StackLayout 
+            x:Name="mainStack" 
+            Grid.Row="5"
+            Orientation="Horizontal" 
+            Spacing="10"
+            HorizontalOptions="Center"
+            Margin="20">
+            <Label 
+                Text="Label 1" 
+                BackgroundColor="Green"/>
+            <Label 
+                Text="Label 2"
+                BackgroundColor="Yellow"/>
+            <Label 
+                Text="Label 3" 
+                Background="BlueViolet"/>
+        </StackLayout>
+    </Grid>
+    
+</ContentPage>

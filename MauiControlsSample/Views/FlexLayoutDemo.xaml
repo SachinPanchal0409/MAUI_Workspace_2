@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.FlexLayoutDemo"
+             Title="FlexLayoutDemo">
+    
+    <ScrollView>
+        <FlexLayout
+            Direction="Row"
+            JustifyContent="Center"
+            AlignItems="Center"
+            AlignContent="Center"
+            Wrap="Wrap"
+            Padding="10"
+            BackgroundColor="LightGray">
+
+            <Label
+                Text="Label"
+                BackgroundColor="Green"
+                WidthRequest="100"
+                HeightRequest="50"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                FlexLayout.Basis="300"
+                FlexLayout.Order="2" />
+
+            <Button
+                Text="Button"
+                BackgroundColor="Blue"
+                WidthRequest="100"
+                HeightRequest="50"
+                FlexLayout.Grow="1"
+                FlexLayout.Order="1" />
+
+            <Image
+                Source="https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg"
+                WidthRequest="100"
+                HeightRequest="100"
+                FlexLayout.Shrink="1"
+                FlexLayout.AlignSelf="End" />
+
+        </FlexLayout>
+    </ScrollView>
+    
+</ContentPage>

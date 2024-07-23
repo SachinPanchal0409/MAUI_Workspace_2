@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.MenusDemo">
+
+    <ContentPage.MenuBarItems>
+        <MenuBarItem 
+            Text="File">
+            <MenuFlyoutItem
+                Text="Save"/>
+            <MenuFlyoutItem
+                Text="Save As"/>
+            <MenuFlyoutSeparator/>
+            <MenuFlyoutItem
+                Text="Exit"/>
+        </MenuBarItem>
+        <MenuBarItem 
+            Text="Edit">
+            <MenuFlyoutItem
+                Text="Cut">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator 
+                        Modifiers="Ctrl"
+                        Key="X" />
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </MenuFlyoutItem>
+            <MenuFlyoutItem
+                Text="Copy">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator 
+                        Modifiers="Ctrl"
+                        Key="C" />
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </MenuFlyoutItem>
+            <MenuFlyoutItem
+                Text="Paste">
+                <MenuFlyoutItem.KeyboardAccelerators>
+                    <KeyboardAccelerator 
+                        Modifiers="Ctrl"
+                        Key="V" />
+                </MenuFlyoutItem.KeyboardAccelerators>
+            </MenuFlyoutItem>
+        </MenuBarItem>
+        <MenuBarItem 
+            Text="Help">
+            <MenuFlyoutSubItem
+                Text="Join us on social Media">
+                <MenuFlyoutItem
+                    Text="Youtube"/>
+                <MenuFlyoutItem
+                    Text="Twitter"/>
+                <MenuFlyoutItem
+                    Text="Linkedin"/>
+            </MenuFlyoutSubItem>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings"/>
+        <ToolbarItem Text="About"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

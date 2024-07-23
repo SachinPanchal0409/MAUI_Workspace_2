@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.ButtonsControl"
+             Title="ButtonsControl">
+    <ScrollView>
+        <Grid
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            ColumnDefinitions="*, *"
+            RowSpacing="15"
+            Margin="30">
+            <Label
+                Text="Primary Button"
+                VerticalTextAlignment="Center"
+                FontSize="20"/>
+            <Button
+                Grid.Column="1"
+                Text="Click here!!"
+                Command="{Binding ButtonClickCommand}"
+                LineBreakMode="CharacterWrap"/>
+            <Label
+                Grid.Row="1"
+                VerticalTextAlignment="Center"
+                Text="Disabled Button"
+                FontSize="20"/>
+            <Button
+                Grid.Row="1"
+                Grid.Column="1"
+                IsEnabled="False"
+                Text="Disabled Button"/>
+            <Label
+                Grid.Row="2"
+                Text="Outline Button"
+                VerticalTextAlignment="Center"
+                FontSize="20"/>
+            <Button
+                Grid.Row="2"
+                Grid.Column="2"
+                Text="Outline Button"
+                TextColor="Black"
+                BackgroundColor="Transparent"
+                BorderColor="Aquamarine"
+                BorderWidth="1"/>
+            <Label
+                Grid.Row="3"
+                Text="Button with Icon"
+                VerticalTextAlignment="Center"
+                FontSize="20"/>
+            <Button
+                Grid.Row="3"
+                Grid.Column="3"
+                Text="Button">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="FluentIcons"
+                        Glyph="&#xe452;"/>
+                </Button.ImageSource>
+            </Button>
+            <Label
+                Grid.Row="4"
+                Text="Radial Gradient"
+                VerticalTextAlignment="Center"
+                FontSize="20"/>
+            <Button
+                Grid.Row="4"
+                Grid.Column="4"
+                Text="Radial Gradient"
+                TextColor="Black"
+                Style="{StaticResource GradientButtonStyle}">
+            </Button>
+            <Label
+                Grid.Row="5"
+                Text="Icon Button"
+                VerticalTextAlignment="Center"
+                FontSize="20"/>
+            <ImageButton
+                Grid.Row="5"
+                Grid.Column="5"
+                HeightRequest="10"
+                WidthRequest="10"
+                Source="D:\.NET MAUI\MAUIWorkspace2\MauiControlsSample\Resources\Images\icon_edit.png"/>
+            <Label
+                Grid.Row="6"
+                Text="Radio Button"
+                VerticalTextAlignment="Center"
+                FontSize="20"/>
+            <RadioButton
+                Grid.Row="6"
+                Grid.Column="6"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Content="Yes"/>
+            <Label
+                Grid.Row="7"
+                Text="Toggle Button"
+                VerticalTextAlignment="Center"
+                FontSize="20"/>
+            <Switch
+                Grid.Row="7"
+                Grid.Column="7"
+                HorizontalOptions="Start"
+                Style="{StaticResource colorswitch}"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -4,12 +4,104 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiControlsSample"
+    xmlns:views="clr-namespace:MauiControlsSample.Views"
+    FlyoutIcon="D:\.NET MAUI\MAUIWorkspace2\MauiControlsSample\Resources\Images\dotnet_bot.png"
     Shell.FlyoutBehavior="Disabled"
     Title="MauiControlsSample">
 
-    <ShellContent
+    <Shell.Resources>
+        <Style 
+            x:Key="BaseStyle"
+            TargetType="Element">
+            <Setter 
+                Property="Shell.BackgroundColor"
+                Value="#455A64" />
+            <Setter 
+                Property="Shell.ForegroundColor"
+                Value="White" />
+            <Setter 
+                Property="Shell.TitleColor"
+                Value="White" />
+            <Setter 
+                Property="Shell.DisabledColor"
+                Value="#B4FFFFFF" />
+            <Setter 
+                Property="Shell.UnselectedColor"
+                Value="#95FFFFFF" />
+        </Style>
+        <Style 
+            TargetType="ShellItem"
+            BasedOn="{StaticResource BaseStyle}" />
+        <Style 
+            x:Key="MonkeysShell"
+            TargetType="Element"
+            BasedOn="{StaticResource BaseStyle}">
+            <Setter 
+                Property="Shell.BackgroundColor"
+                Value="#689F39" />
+        </Style>
+        
+        <Style 
+            x:Key="BearsShell"
+            TargetType="Element"
+            BasedOn="{StaticResource BaseStyle}">
+            <Setter
+                Property="Shell.BackgroundColor"
+                Value="#546DFE" />
+        </Style>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <Image
+            HeightRequest="100"
+            HorizontalOptions="FillAndExpand"
+            Source="https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg"/>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <Image
+            HeightRequest="100"
+            HorizontalOptions="FillAndExpand"
+            Source="https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg"/>
+    </Shell.FlyoutFooter>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid
+                ColumnDefinitions="35, *"
+                ColumnSpacing="10">
+                <Image
+                    Source="{Binding FlyoutIcon}" 
+                    HeightRequest="20"/>
+                <Label
+                    Grid.Column="1"
+                    Text="{Binding Title}"
+                    FontAttributes="Bold"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <ShellContent 
+        Icon="D:\.NET MAUI\MAUIWorkspace2\MauiControlsSample\Resources\Images\dotnet_bot.png"
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <FlyoutItem 
+        Route="animals"
+        FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent
+            Route="monkeys"
+            Style="{StaticResource MonkeysShell}"
+            Title="Monkeys"
+            ContentTemplate="{DataTemplate views:MonkeysPage}" />
+        
+        <ShellContent 
+            Route="bears"
+            Style="{StaticResource BearsShell}"
+            Title="Bears"
+            ContentTemplate="{DataTemplate views:BearsPage}" />
+    </FlyoutItem>
 
 </Shell>

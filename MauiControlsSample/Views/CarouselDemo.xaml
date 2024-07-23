@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.CarouselDemo"
+             xmlns:models="clr-namespace:MauiControlsSample.Models"
+             xmlns:viewModel="clr-namespace:MauiControlsSample.ViewModels"
+             Title="CarouselDemo">
+
+    <Grid
+        RowDefinitions="*, Auto"
+        RowSpacing="10"
+        Margin="10">
+        <RefreshView 
+            IsRefreshing="{Binding IsRefreshing}"
+            Command="{Binding RefreshCommand}">
+            <CarouselView
+                Position="{Binding Position}"
+                CurrentItem="{Binding CurrentItem}"
+                IndicatorView="indicatorView"
+                Loop="False"
+                ItemsSource="{Binding IntroScreens}"
+                EmptyView="No items to display.">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate
+                        x:DataType="models:IntroScreenModel">
+                        <ScrollView>
+                            <Grid
+                                RowDefinitions="60*, 40*">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:CarouselDemoViewModel}}, Path=TapCommand}" CommandParameter="{Binding .}"/>
+                                </Grid.GestureRecognizers>
+                                <Image 
+                                    Source="{Binding IntroImage}"
+                                    HeightRequest="200"
+                                    Aspect="AspectFit"/>
+                                <VerticalStackLayout
+                                    Grid.Row="1">
+                                    <Label
+                                        Text="{Binding IntroTitle}"
+                                        FontSize="28"
+                                        FontAttributes="Bold"/>
+                                    <Label
+                                        Text="{Binding IntroDescription}"
+                                        IsVisible="{Binding IsIntroDescriptionVisible}"
+                                        FontSize="20"
+                                        TextColor="Gray"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </ScrollView>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </RefreshView>
+        <HorizontalStackLayout
+            Grid.Row="1">
+            <IndicatorView
+                x:Name="indicatorView"
+                IndicatorSize="10"
+                IndicatorColor="LightGray"
+                SelectedIndicatorColor="SpringGreen"/>
+            <Button
+                Text="Previous"
+                Command="{Binding PreviousCommand}"/>
+            <Button
+                Text="Next"
+                Margin="10, 0, 0, 0"
+                Command="{Binding NextCommand}"/>
+        </HorizontalStackLayout>
+    </Grid>
+
+</ContentPage>
