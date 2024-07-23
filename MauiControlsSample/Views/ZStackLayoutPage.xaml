@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.ZStackLayoutPage"
+             xmlns:layouts="clr-namespace:MauiControlsSample.Layouts"
+             Title="ZStackLayoutPage">
+    
+    <layouts:ZStackLayout 
+        HorizontalOptions="CenterAndExpand" 
+        VerticalOptions="CenterAndExpand">
+        <Image 
+            Source="https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg" 
+            HorizontalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand" />
+        <Label 
+            Text="Text over the image, aligned to top" 
+            FontAttributes="Bold" 
+            FontSize="15" 
+            TextColor="Orange" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Start"/>
+        <Label 
+            Text="Text right in the middle" 
+            FontAttributes="Bold"
+            FontSize="20" 
+            TextColor="LightGreen" 
+            HorizontalOptions="Center" 
+            VerticalOptions="Center"/>
+        <Label 
+            Text="This is an easy way to do captions" 
+            FontAttributes="Bold" 
+            FontSize="16" 
+            TextColor="Red" 
+            HorizontalOptions="Center" 
+            VerticalOptions="End"/>
+    </layouts:ZStackLayout>
+    
+</ContentPage>

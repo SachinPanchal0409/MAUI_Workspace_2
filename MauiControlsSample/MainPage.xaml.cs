@@ -9,7 +9,6 @@ namespace MauiControlsSample
             InitializeComponent();
             BindingContext = _viewModel = viewModel;
         }
-
         private MainPageViewModel _viewModel;
     }
 }

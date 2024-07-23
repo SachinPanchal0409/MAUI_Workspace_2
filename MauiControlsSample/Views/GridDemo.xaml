@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.GridDemo"
+             Title="GridDemo">
+
+    <Grid
+        RowDefinitions="Auto, Auto"
+        ColumnDefinitions="*, *"
+        HorizontalOptions="Center"
+        ColumnSpacing="20">
+        <Label
+            Text="Demo Text 01"
+            FontSize="20"/>
+        <Label
+            Grid.Column="1"
+            Text="Demo Text 02"
+            FontSize="20"/>
+        <Label
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Text="To make elements span across multiple rows and columns, use the Grid.RowSpan and Grid.ColumnSpan attached properties."
+            HorizontalTextAlignment="Center"
+            FontSize="20"/>
+    </Grid>
+    
+</ContentPage>

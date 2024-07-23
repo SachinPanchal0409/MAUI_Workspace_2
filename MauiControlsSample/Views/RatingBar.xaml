@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControlsSample.Views.RatingBar"
+             xmlns:icons="clr-namespace:MauiControlsSample.Constant"
+             Title="RatingBar">
+
+    <Grid
+        RowDefinitions="Auto, Auto">
+        <Image
+            HeightRequest="100"
+            WidthRequest="100"
+            Source="https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg"/>
+        <HorizontalStackLayout
+            Grid.Row="1"
+            HorizontalOptions="CenterAndExpand">
+            <Label
+                Text="{Binding Icon0}"
+                Style="{StaticResource MaterialIcon}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="0"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                Text="{Binding Icon1}"
+                Style="{StaticResource MaterialIcon}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                Text="{Binding Icon2}"
+                Style="{StaticResource MaterialIcon}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="2"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                Text="{Binding Icon3}"
+                Style="{StaticResource MaterialIcon}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="3"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label
+                Text="{Binding Icon4}"
+                Style="{StaticResource MaterialIcon}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="4"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+    </Grid>
+   
+</ContentPage>

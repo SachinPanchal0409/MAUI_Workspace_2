@@ -13,6 +13,11 @@
     <Color x:Key="SecondaryDarkText">#9880e5</Color>
     <Color x:Key="Tertiary">#2B0B98</Color>
 
+    <Color x:Key="NavyBlue">#003060</Color>
+    <Color x:Key="BlueGrotto">#0E86D4</Color>
+    <Color x:Key="Blue">#055C9D</Color>
+    <Color x:Key="BabyBlue">#68BBE3</Color>
+
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
     <Color x:Key="Magenta">#D600AA</Color>

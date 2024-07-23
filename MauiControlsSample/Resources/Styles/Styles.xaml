@@ -423,4 +423,12 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style x:Key="MaterialIcon" TargetType="Label">
+        <Setter Property="FontFamily" Value="MaterialIconsRegular"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="TextColor" Value="Gold"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+    </Style>
+
 </ResourceDictionary>
