@@ -23,6 +23,7 @@ namespace MauiControlsSample
             Routing.RegisterRoute(nameof(CarouselDemo), typeof(CarouselDemo)); 
             Routing.RegisterRoute(nameof(RatingBar), typeof(RatingBar));
             Routing.RegisterRoute(nameof(MenusDemo), typeof(MenusDemo));
+            Routing.RegisterRoute(nameof(NotificationDemo), typeof(NotificationDemo)); 
             MainPage = new AppShell();
         }
     }

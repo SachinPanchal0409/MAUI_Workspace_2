@@ -1,6 +1,7 @@
 ﻿using MauiControlsSample.ViewModels;
 using Microsoft.Extensions.Logging;
 using MauiControlsSample.Views;
+using Plugin.LocalNotification;
 
 namespace MauiControlsSample
 {
@@ -11,6 +12,7 @@ namespace MauiControlsSample
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseLocalNotification()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("MaterialIcons-Regular.ttf", "MaterialIconsRegular");
@@ -43,6 +45,8 @@ namespace MauiControlsSample
             builder.Services.AddTransient<CarouselDemoViewModel>();
             builder.Services.AddTransient<RatingBar>();
             builder.Services.AddTransient<RatingBarViewModel>();
+            builder.Services.AddTransient<NotificationDemo>();
+            builder.Services.AddTransient<NotificationDemoViewModel>();
             return builder.Build();
         }
     }
