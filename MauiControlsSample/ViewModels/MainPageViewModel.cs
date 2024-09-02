@@ -101,6 +101,11 @@ namespace MauiControlsSample.ViewModels
                 await Shell.Current.GoToAsync(nameof(MenusDemo));
             }
 
+            if (item.Name == "Notification") 
+            {
+                await Shell.Current.GoToAsync(nameof(NotificationDemo));
+            }
+
             SelectedItem = null; 
         }
 
